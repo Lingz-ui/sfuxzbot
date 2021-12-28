@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Scan QR</title>
+    </head>
+    <body>
+        <h1>Scan This QR On WhatsApp Web</h1>
+        <img id="qrcode" alt="qrcode" />
+        <p>ID : <span id="aidi"><%= id %></span></p>
+        <p>Message : <span id="conn"></span></p>
+        <p>Number BOT : <span id="bot"></span></p>
+        <form action="/custom-menu">
+            <button type="submit">Custom Menu</button>
+        </form>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.js" integrity="sha512-nYuHvSAhY5lFZ4ixSViOwsEKFvlxHMU2NHts1ILuJgOS6ptUmAGt/0i5czIgMOahKZ6JN84YFDA+mCdky7dD8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            $(document).ready(() => {
+                const socket = io()
+                const searchParams = new URLSearchParams(window.location.search)
+                console.log("hello world!")
+                socket.emit("id", $("#aidi").text())
+                
+                socket.on("conn", (msg) => {
+                    $("#conn").text(msg)
+                })
+                socket.on("qr", (qr) => {
+                    $("#qrcode").attr("src", qr)
+                    $("#qrcode").show()
+                })
+                socket.on("open", (msg) => {
+                    $("#qrcode").hide()
+                })
+                socket.on("bot", (msg) => {
+                    $("#bot").text(msg)
+                })
+            })
+        </script>
+    </body>
+</html>

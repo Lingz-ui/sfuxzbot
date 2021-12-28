@@ -1,0 +1,50 @@
+Arguments: 
+  /data/data/com.termux/files/usr/bin/node /data/data/com.termux/files/usr/bin/yarn add github:adiwajshing/baileys
+
+PATH: 
+  /data/data/com.termux/files/usr/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  17.2.0
+
+Platform: 
+  android arm
+
+Trace: 
+  Error: read ECONNABORTED
+      at TLSWrap.onStreamRead (node:internal/stream_base_commons:211:20)
+
+npm manifest: 
+  {
+    "name": "bot-host",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@adiwajshing/baileys": "^3.5.3",
+      "ejs": "^3.1.6",
+      "express": "^4.17.2",
+      "express-flash": "0.0.2",
+      "express-session": "^1.17.2",
+      "mongoose": "^6.1.3",
+      "passport": "^0.5.2",
+      "passport-local": "^1.0.0",
+      "qrcode": "^1.5.0",
+      "socket.io": "^4.4.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

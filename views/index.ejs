@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
+        <title>BOT Host</title>
+        
+    </head>
+    <body>
+        <div id="app">
+            <h1>WhatsApp BOT Hosting</h1>
+            <h2>Hello! <%= username %>!</h2>
+            <p>Your Email : <span><%= email %></span></p>
+            <p>Your BOTS : <span><%= numberBot %></span></p>
+        </div>
+        <form action="/logout" method="post">
+            <button type="submit">Log Out</button>
+        </form>
+        <form action="/scan-qr">
+            <button type="submit">Scan QR</button>
+        </form>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.js" integrity="sha512-nYuHvSAhY5lFZ4ixSViOwsEKFvlxHMU2NHts1ILuJgOS6ptUmAGt/0i5czIgMOahKZ6JN84YFDA+mCdky7dD8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </body>
+</html>
